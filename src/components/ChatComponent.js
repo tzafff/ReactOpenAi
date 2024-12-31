@@ -7,7 +7,9 @@ function ChatComponent() {
 
     const askAI = async () => {
         try {
-            const response = await fetch(`https://spring-ai-demo-v1-2.onrender.com/ask-ai-options?prompt=${prompt}`)
+            const response = await fetch(`https://spring-ai-demo-v1-2.onrender.com/ask-ai-options?prompt=${prompt}`, {
+                mode: 'cors',
+            });
             const data = await response.text();
             console.log(data);
             setChatResponse(data);
